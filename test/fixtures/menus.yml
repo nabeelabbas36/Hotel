@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  restaurantid: 
+  price: 1
+  outlet: MyString
+
+two:
+  restaurantid: 
+  price: 1
+  outlet: MyString

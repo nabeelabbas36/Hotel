@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  city_id: 1
+  area: MyString
+  address: MyString
+  start_time: 2013-09-26 20:14:08
+  close_time: 2013-09-26 20:14:08
+  delievery: false
+
+two:
+  city_id: 1
+  area: MyString
+  address: MyString
+  start_time: 2013-09-26 20:14:08
+  close_time: 2013-09-26 20:14:08
+  delievery: false

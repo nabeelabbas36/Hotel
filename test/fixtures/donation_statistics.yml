@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  event_id: 1
+  account: MyString
+  amount: 1
+  location: MyString
+  time: 1
+  payment: 1
+  payment_mehtod: false
+  donation: 1
+  artist_id: 1
+
+two:
+  user_id: 1
+  event_id: 1
+  account: MyString
+  amount: 1
+  location: MyString
+  time: 1
+  payment: 1
+  payment_mehtod: false
+  donation: 1
+  artist_id: 1

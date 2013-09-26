@@ -1,0 +1,12 @@
+<% content_for :title do %>Restaurant<% end %>
+<h3>Restaurant</h3>
+<%= simple_form_for [:admins,  @restaurant], :html => { :multipart => true } do |form| %>
+<%= form.error_notification %>
+
+<%= form.input :name, autofocus: true %>
+<%= form.input :location %>
+<%= form.input :start_time %>
+<%= form.input :close_time %>
+
+<%= form.button :submit, 'Submit'%>
+<% end %>

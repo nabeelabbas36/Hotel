@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  restaurantid: 1
+  facebook: MyString
+  twitter: MyString
+  tumblr: MyString
+  linkedin: MyString
+
+two:
+  restaurantid: 1
+  facebook: MyString
+  twitter: MyString
+  tumblr: MyString
+  linkedin: MyString

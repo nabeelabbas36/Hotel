@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  artist_id: 1
+  statements: MyString
+  desscription: MyString
+  roles: MyString
+  received_donations: 
+
+two:
+  artist_id: 1
+  statements: MyString
+  desscription: MyString
+  roles: MyString
+  received_donations: 

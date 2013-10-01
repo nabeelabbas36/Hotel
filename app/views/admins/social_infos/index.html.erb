@@ -1,0 +1,24 @@
+<ul class="nav nav-pills btn btn-default navbar-btn navbar-fixed-top">
+  <li><%= link_to "Back", admins_path  %></li>
+</ul>
+<h1>All Locations</h1>
+
+<table>
+
+  <th>Facebook</th>
+  <th>Twitter</th>
+  <th>Tumblr</th>
+
+</table>
+
+<%  @socail_infos.each do |c|%>
+  <table>
+    <tr>
+
+      <td><%= c.facebook %></td>
+      <td><%= c.twitter %></td>
+      <td><%= c.tumblr %></td>
+
+    </tr>
+  </table> 
+<%end%>

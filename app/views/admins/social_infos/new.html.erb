@@ -1,0 +1,25 @@
+<ul class="nav nav-pills btn btn-default navbar-btn navbar-fixed-top">
+  <li><%= link_to "Back", admins_path  %></li>
+</ul>
+<%= form_for [:admins, @social_info] do |m| %>
+  <div>
+    <%= m.label :facebook%>
+    <%= m.text_field :facebook, :required => true %>
+  </div>
+  <div>
+
+    <%= m.label :twitter %>
+    <%= m.text_field :twitter, :required => true %>
+  </div>
+  <div>
+    <%= m.label :tumblr %>
+    <%= m.text_field :tumblr, :required => true %>
+  </div>
+  <%= m.submit %> 
+<% end %>
+<script type="text/javascript">
+  $('#new_social_info').validate({
+    errorClass: "alert alert-warning"
+  });
+</script>
+

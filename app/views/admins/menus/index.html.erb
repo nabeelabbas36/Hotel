@@ -1,0 +1,22 @@
+<ul class="nav nav-pills btn btn-default navbar-btn navbar-fixed-top">
+  <li><%= link_to "Back", admins_path  %></li>
+</ul>
+<h1>All Menus</h1>
+
+<table>
+
+  <th>Name</th>
+  <th>price</th>
+  <th>outlet</th>
+
+</table>
+<%  @menus.each do |menu|%>
+  <table>
+    <tr>
+
+      <td><%= menu.name %></td>
+      <td><%= menu.price %></td>
+      <td><%= menu.outlet %></td>
+    </tr>
+  </table> 
+<%end%>

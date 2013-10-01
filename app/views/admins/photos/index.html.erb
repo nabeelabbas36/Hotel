@@ -1,0 +1,10 @@
+<ul class="nav nav-pills btn btn-default navbar-btn navbar-fixed-top">
+  <li><%= link_to "Back", admins_path  %></li>
+</ul>
+
+
+<%@photos.each_with_index do |photo, index|%>
+  <%= index+1 %>.
+  <%= image_tag photo.avatar.url(:medium) %>
+  <br />
+<%end%>

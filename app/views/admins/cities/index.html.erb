@@ -1,0 +1,19 @@
+<ul class="nav nav-pills btn btn-default navbar-btn navbar-fixed-top">
+  <li><%= link_to "Back", admins_path  %></li>
+</ul>
+<h1>All Cities</h1>
+
+<table>
+
+  <th>Name</th>
+
+
+</table>
+<%  @cities.each do |c|%>
+  <table>
+    <tr>
+
+      <td><%= c.name %></td>
+    </tr>
+  </table> 
+<%end%>

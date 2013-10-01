@@ -1,0 +1,27 @@
+<ul class="nav nav-pills btn btn-default navbar-btn navbar-fixed-top">
+  <li><%= link_to "Back", admins_path  %></li>
+</ul>
+<%= form_for [:admins, @location] do |m| %>
+  <div>
+    <%= m.label :Area %>
+    <%= m.text_field :area, :required => true %>
+  </div>
+  <div>
+
+    <%= m.label :address %>
+    <%= m.text_field :address, :required => true %>
+  </div>
+  <div>
+    <%= m.label :start_time %>
+    <%= m.text_field :start_time, :required => true %>
+  </div>
+  <div>
+    <%= m.label :close_time %>
+    <%= m.text_field :close_time, :required => true %>
+  </div>
+
+  <%= m.submit %> 
+<% end %>
+<script type="text/javascript">
+  $('#new_location').validate({});
+</script>

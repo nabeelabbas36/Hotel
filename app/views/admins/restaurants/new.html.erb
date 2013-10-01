@@ -1,12 +1,48 @@
+<ul class="nav nav-pills btn btn-default navbar-btn navbar-fixed-top">
+  <li><%= link_to "Back", admins_path  %></li>
+</ul>
 <% content_for :title do %>Restaurant<% end %>
 <h3>Restaurant</h3>
-<%= simple_form_for [:admins,  @restaurant], :html => { :multipart => true } do |form| %>
-<%= form.error_notification %>
+<%#= form_for [:admins,  @restaurant] do |f| %>
+<%#= form.error_notification %>
+<%#= f.input :name%>
 
-<%= form.input :name, autofocus: true %>
-<%= form.input :location %>
-<%= form.input :start_time %>
-<%= form.input :close_time %>
+<%#=  f.form_for [:admins,  @location]do |location_form| %>
+<%#= location_form.input :area%>
+<%#= location_form.input :address%>
+<%#= location_form.input :start_time%>
+<%#= location_form.input :close_time%>
 
-<%= form.button :submit, 'Submit'%>
+<%#= form.button :submit, 'Submit'%>
+<%# end %>
+<%= nested_form_for [:admins, @restaurant] do |f| %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true  %>
+  </div>
+  <%= f.fields_for :menus do |address_fields| %>
+    <div class="field">
+      <%= address_fields.label :DishName %>
+      <%= address_fields.text_field :name, :required => true %>
+    </div>
+    <div class="field">
+      <%= address_fields.label :price %>
+      <%= address_fields.text_field :price, :required => true %>
+    </div>
+    <div class="field">
+      <%= address_fields.label :outlet %>
+      <%= address_fields.text_field :outlet, :required => true %>
+    </div>
+    <div>
+      <%= f.fields_for :photo, :html => { :multipart => true } do |form| %>
+        <%= form.file_field :avatar %>
+      <% end %>
+    </div>   
+  <% end %>
+  <%= f.submit %>
 <% end %>
+<script type="text/javascript">
+  $('#new_restaurant').validate({});
+</script>
+

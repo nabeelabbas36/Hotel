@@ -50,14 +50,16 @@ gem 'google_drive'
 gem "activerecord-tableless", "~> 1.0"
 
 gem 'gibbon'
-
+#for sign in and sign out
 gem 'devise'
 
 #gem 'protected_attributes'
 
 gem 'cancan'
-
+#for images
 gem "paperclip"
+#for nested forms
+gem "nested_form"
 
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 

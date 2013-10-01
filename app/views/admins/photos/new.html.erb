@@ -1,0 +1,12 @@
+<ul class="nav nav-pills btn btn-default navbar-btn navbar-fixed-top">
+  <li><%= link_to "Back", admins_path  %></li>
+</ul>
+<%= form_for [:admins, @photo], :html => { :multipart => true } do |form| %>
+  <%= form.file_field :avatar %>
+  <%= form.submit %>
+<% end %>
+
+
+<script type="text/javascript">
+  $('#photo_avatar').imgPreview();
+</script>

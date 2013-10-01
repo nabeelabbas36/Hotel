@@ -1,7 +1,7 @@
 class CreatePhotos < ActiveRecord::Migration
   def change
     create_table :photos do |t|
-      t.integer :restaurantid
+      t.integer :restaurant_id
 
       t.timestamps
     end

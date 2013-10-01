@@ -16,9 +16,13 @@ Hotel::Application.routes.draw do
   root 'home#index'
   get '/admins' => 'admins/home#index' 
   
+ namespace :admins do
+   resources :restaurants,:photos,:menus,:locations,:social_infos,:cities,:countries
+   
+ end
  
-    
-  # The priority is based upon order of creation: first created -> highest priority.
+  
+    # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

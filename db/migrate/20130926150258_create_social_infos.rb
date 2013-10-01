@@ -1,7 +1,7 @@
 class CreateSocialInfos < ActiveRecord::Migration
   def change
     create_table :social_infos do |t|
-      t.integer :restaurantid
+      t.integer :restaurant_id
       t.string :facebook
       t.string :twitter
       t.string :tumblr

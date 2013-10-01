@@ -1,0 +1,23 @@
+<ul class="nav nav-pills btn btn-default navbar-btn navbar-fixed-top">
+  <li><%= link_to "Back", admins_path  %></li>
+  <li><%= link_to "Add Photo", new_admins_photo_path %></li>  
+</ul>
+<%= form_for [:admins, @menu] do |m| %>
+  <div>
+    <%= m.label :Dishname%>
+    <%= m.text_field :name, :required => true %>
+  </div>
+  <div>
+
+    <%= m.label :price %>
+    <%= m.text_field :price, :required => true %>
+  </div>
+  <div>
+    <%= m.label :outlet %>
+    <%= m.text_field :outlet, :required => true %>
+  </div>
+  <%= m.submit %> 
+<% end %>
+<script type="text/javascript">
+  $('#new_menu').validate({});
+</script>

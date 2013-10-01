@@ -2,8 +2,8 @@ class CreateRestaurants < ActiveRecord::Migration
   def change
     create_table :restaurants do |t|
       t.string :name
-      t.integer :location_id
-
+#      t.integer :location_id
+      t.integer :menu_id
       t.timestamps
     end
   end

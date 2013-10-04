@@ -21,28 +21,41 @@
     <%= f.label :name %>
     <%= f.text_field :name, :required => true  %>
   </div>
-  <%= f.fields_for :menus do |address_fields| %>
+  
+  <%= f.fields_for :menus do |builder| %>
+    <%= render 'menu_fields',:f=>builder %>
+  <%end%>
+  <p><%= link_to_add_fields "Add Menu", f, :menus %></p>
+
+  <%= f.fields_for :social_info do |social_fields| %>
     <div class="field">
-      <%= address_fields.label :DishName %>
-      <%= address_fields.text_field :name, :required => true %>
+      <%= social_fields.label :facebook %>
+      <%= social_fields.text_field :facebook, :required => true %>
+    </div>    
+    <div class="field">
+      <%= social_fields.label :twitter %>
+      <%= social_fields.text_field :twitter, :required => true %>
     </div>
     <div class="field">
-      <%= address_fields.label :price %>
-      <%= address_fields.text_field :price, :required => true %>
+      <%= social_fields.label :tumblr %>
+      <%= social_fields.text_field :tumblr, :required => true %>
     </div>
-    <div class="field">
-      <%= address_fields.label :outlet %>
-      <%= address_fields.text_field :outlet, :required => true %>
-    </div>
-    <div>
-      <%= f.fields_for :photo, :html => { :multipart => true } do |form| %>
-        <%= form.file_field :avatar %>
-      <% end %>
-    </div>   
   <% end %>
+  
+  <div>
+    <%= f.fields_for :photo, :html => { :multipart => true } do |form| %>
+      <%= form.file_field :avatar %>
+    <% end %>
+  </div> 
+  <br />
   <%= f.submit %>
 <% end %>
 <script type="text/javascript">
+   function add_fields(menus, association, content) {
+    var new_id = new Date().getTime();
+    var regexp = new RegExp("new_" + association, "g");
+    $(menus).parent().before(content.replace(regexp, new_id));
+  }
   $('#new_restaurant').validate({});
 </script>
 

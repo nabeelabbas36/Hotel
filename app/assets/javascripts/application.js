@@ -16,3 +16,16 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+function remove_fields(link) {
+  $(link).previous("input[type=hidden]").value = "1";
+  $(link).up(".fields").hide();
+}
+
+function add_fields(menus, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g");
+  $(menus).up().insert({
+    before: content.replace(regexp, new_id)
+  });
+}

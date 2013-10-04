@@ -1,4 +1,5 @@
 Hotel::Application.routes.draw do
+  
   # change admin/sign_in path to admin_signin
   devise_for :admins, :skip => [:sessions]
   as :admin do

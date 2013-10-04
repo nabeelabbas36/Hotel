@@ -15,6 +15,7 @@ class Admins::PhotosController < ApplicationController
       render :new
     end
   end
+  #incase of uploading photo we have to user variable of image i-e "avatar" and permit it to allow saving of photo image
   private
   def secure_params
     params.require(:photo).permit(:avatar)

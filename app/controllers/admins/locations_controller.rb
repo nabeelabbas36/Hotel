@@ -1,4 +1,5 @@
 class Admins::LocationsController < ApplicationController
+  #you can have different layouts but default is application.html.erb if you want to use different layout for any page you have have to define at top key word layout
   layout "admin"
   def index
     @locations = Location.all

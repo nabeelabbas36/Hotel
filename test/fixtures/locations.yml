@@ -1,17 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  city_id: 1
-  area: MyString
+  name: MyString
   address: MyString
-  start_time: 2013-09-26 20:14:08
-  close_time: 2013-09-26 20:14:08
-  delievery: false
+  longitude: 1.5
+  latitude: 1.5
+  gmaps: false
+  start_time: 2013-10-07 12:12:36
+  close_time: MyString
 
 two:
-  city_id: 1
-  area: MyString
+  name: MyString
   address: MyString
-  start_time: 2013-09-26 20:14:08
-  close_time: 2013-09-26 20:14:08
-  delievery: false
+  longitude: 1.5
+  latitude: 1.5
+  gmaps: false
+  start_time: 2013-10-07 12:12:36
+  close_time: MyString

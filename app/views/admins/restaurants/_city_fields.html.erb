@@ -1,0 +1,11 @@
+ <div class="fields">
+<div>
+  <%= f.collection_select(:city_id, City.all,:id,:name,{include_blank:'Select City'}) %>
+</div>
+   <div>
+  <%= f.collection_select(:country_id, Country.all,:id,:name,{include_blank:'Select Country'}) %>
+</div>
+<div>
+  <%= f.collection_select(:region_id, Region.all,:id,:name,{include_blank:'Select Region'}) %>
+</div>
+ </div>

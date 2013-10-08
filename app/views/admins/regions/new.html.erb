@@ -1,15 +1,14 @@
 <ul class="nav nav-pills btn btn-default navbar-btn navbar-fixed-top">
   <li><%= link_to "Back", admins_path  %></li>
 </ul>
-<%= form_for [:admins, @country] do |m| %>
+<%= form_for [:admins, @region] do |r| %>
   <div>
-    <%= m.label :name %>
-    <%= m.text_field :name, :required => true %>
+    <%= r.label :name %>
+    <%= r.text_field :name, :required => true %>
   </div>
-
   <br />
-  <%= m.submit %> 
+  <%= r.submit %> 
 <% end %>
 <script type="text/javascript">
-  $('#new_country').validate({});
+  $('#new_region').validate({});
 </script>

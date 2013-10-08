@@ -1,5 +1,7 @@
 Hotel::Application.routes.draw do
   
+  resources :locations
+
   # change admin/sign_in path to admin_signin
   devise_for :admins, :skip => [:sessions]
   as :admin do
@@ -18,7 +20,7 @@ Hotel::Application.routes.draw do
   get '/admins' => 'admins/home#index' 
   
  namespace :admins do
-   resources :restaurants,:photos,:menus,:locations,:social_infos,:cities,:countries
+   resources :restaurants,:photos,:menus,:locations,:social_infos,:cities,:countries, :regions
    
  end
  

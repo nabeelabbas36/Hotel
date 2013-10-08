@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -46,6 +46,8 @@ gem 'high_voltage'
 gem 'simple_form'
 
 gem 'google_drive'
+# postgres database
+gem 'pg'
 
 gem "activerecord-tableless", "~> 1.0"
 
@@ -65,7 +67,7 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 
 gem "twitter-bootstrap-rails"
 
-
+gem 'gmaps4rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

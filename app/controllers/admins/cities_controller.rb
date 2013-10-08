@@ -8,6 +8,7 @@ class Admins::CitiesController < ApplicationController
     @city = City.new
   end
   def create 
+    
     @city = City.new(secure_params)
     
     if @city.save

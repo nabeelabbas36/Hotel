@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131004144405) do
+ActiveRecord::Schema.define(version: 20131007150305) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -28,52 +28,33 @@ ActiveRecord::Schema.define(version: 20131004144405) do
     t.datetime "updated_at"
   end
 
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "cities", force: true do |t|
-    t.integer  "country_id",            null: false
-    t.integer  "region_id",             null: false
-    t.string   "name",       limit: 45, null: false
-    t.float    "latitude",              null: false
-    t.float    "longitude",             null: false
-    t.string   "timezone",   limit: 10, null: false
-    t.integer  "dma_id"
-    t.string   "county",     limit: 25
-    t.string   "code",       limit: 4
+    t.integer  "country_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "region_id"
   end
 
-  add_index "cities", ["name"], name: "index_cities_on_name"
-
   create_table "countries", force: true do |t|
-    t.string   "name",                 limit: 50, null: false
-    t.string   "fips104",              limit: 2,  null: false
-    t.string   "iso2",                 limit: 2,  null: false
-    t.string   "iso3",                 limit: 3,  null: false
-    t.string   "ison",                 limit: 4,  null: false
-    t.string   "internet",             limit: 2,  null: false
-    t.string   "capital",              limit: 25
-    t.string   "map_reference",        limit: 50
-    t.string   "nationality_singular", limit: 35
-    t.string   "nationaiity_plural",   limit: 35
-    t.string   "currency",             limit: 30
-    t.string   "currency_code",        limit: 3
-    t.integer  "population"
-    t.string   "title",                limit: 50
-    t.string   "comment"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "locations", force: true do |t|
-    t.integer  "city_id"
-    t.string   "area"
+    t.integer  "restaurant_id"
+    t.string   "name"
     t.string   "address"
+    t.float    "longitude"
+    t.float    "latitude"
+    t.boolean  "gmaps"
     t.time     "start_time"
     t.time     "close_time"
-    t.boolean  "delievery"
+    t.integer  "city_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -98,10 +79,8 @@ ActiveRecord::Schema.define(version: 20131004144405) do
   end
 
   create_table "regions", force: true do |t|
-    t.integer  "country_id",            null: false
-    t.string   "name",       limit: 45, null: false
-    t.string   "code",       limit: 8,  null: false
-    t.string   "adm1code",   limit: 4,  null: false
+    t.string   "name"
+    t.integer  "country_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -155,7 +134,7 @@ ActiveRecord::Schema.define(version: 20131004144405) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

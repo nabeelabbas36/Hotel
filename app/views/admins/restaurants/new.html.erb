@@ -64,8 +64,11 @@
   <h3>Location</h3>
   <%= f.fields_for :locations do |builder| %>
     <%= render 'location_fields',:f=>builder %>
-  
+    <div>
+      <%= select_tag :country_id, options_from_collection_for_select(Country.all, 'id', 'name'), {:default => 'Select Country', :onchange => "get_regions()"}%>
+    </div>
   <% end %>
+
   <br />
   <%= f.submit %>
 <% end %>

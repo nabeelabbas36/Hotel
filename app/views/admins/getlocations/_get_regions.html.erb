@@ -1,0 +1,6 @@
+<div class="region">
+ <br />
+Regions:
+ <br />
+  <%=select_tag :region_id, options_from_collection_for_select(regions, 'id', 'name'), {:default => 'Select Region', :onchange => "get_cities()"}%>
+</div>

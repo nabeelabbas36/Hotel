@@ -1,0 +1,6 @@
+<div class="city">
+<br />
+Cities:
+<br />
+<%=select_tag :city_id, options_from_collection_for_select(cities, 'id', 'name'), {:default => 'Select City', :name => "location[city_id]"}%>
+</div>

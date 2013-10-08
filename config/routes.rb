@@ -1,6 +1,6 @@
 Hotel::Application.routes.draw do
   
-  resources :locations
+  
 
   # change admin/sign_in path to admin_signin
   devise_for :admins, :skip => [:sessions]
@@ -19,13 +19,17 @@ Hotel::Application.routes.draw do
   root 'home#index'
   get '/admins' => 'admins/home#index' 
   
- namespace :admins do
-   resources :restaurants,:photos,:menus,:locations,:social_infos,:cities,:countries, :regions
+  namespace :admins do
+    resources :restaurants,:photos,:menus,:locations,:social_infos,:cities,:countries, :regions
+    resources :getlocations do
+      get "get_regions"
+      get "get_cities"
+    end
    
- end
+  end
  
   
-    # The priority is based upon order of creation: first created -> highest priority.
+  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

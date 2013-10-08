@@ -19,6 +19,7 @@ class Admins::RestaurantsController < ApplicationController
   end
    
   def create
+    
     @restaurant = Restaurant.new(secure_params)
     if @restaurant.save
       flash[:notice] = "Message sent from #{@restaurant.name}."
@@ -30,7 +31,7 @@ class Admins::RestaurantsController < ApplicationController
   #the forms which we defined in restaurants we have to permit values so they can be saved in database we have to permit them as shown below
   private
   def secure_params
-    params.require(:restaurant).permit(:name, menus_attributes: [:id, :name, :price, :outlet], photo_attributes: [:id, :avatar], social_info_attributes: [:id, :facebook, :twitter, :tumblr],locations_attributes: [:id, :name, :address, :start_time, :close_time,:city_id])
+    params.require(:restaurant).permit(:name, menus_attributes: [:id, :name, :price, :outlet], photo_attributes: [:id, :avatar], social_info_attributes: [:id, :facebook, :twitter, :tumblr],locations_attributes: [:id, :name, :address, :start_time, :close_time, :city_id])
     
   end
 end

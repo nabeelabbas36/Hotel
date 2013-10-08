@@ -6,7 +6,7 @@ class Admins::LocationsController < ApplicationController
   # GET /locations.json
   def index
    @locations = Location.all
-    @json = Location.all.to_gmaps4rails
+   
   end
 
   # GET /locations/1
@@ -27,6 +27,8 @@ class Admins::LocationsController < ApplicationController
   # POST /locations
   # POST /locations.json
   def create
+#    puts "ssssssssssssssss",params.inspect
+#   put
     @location = Location.new(secure_params)
     
     if @location.save
@@ -36,11 +38,7 @@ class Admins::LocationsController < ApplicationController
       render :new
     end
   end
-  private
-  def secure_params
-    params.require(:location).permit(:area, :address, :start_time,:close_time)
-  end
-  end
+ 
 
   # PATCH/PUT /locations/1
   # PATCH/PUT /locations/1.json
@@ -73,7 +71,9 @@ class Admins::LocationsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def location_params
-      params.require(:location).permit(:name, :address, :longitude, :latitude, :gmaps, :start_time, :close_time)
-    end
+    private
+  def secure_params
+    params.require(:location).permit(:name, :address, :start_time,:close_time, :city_id)
+  end
+  end
 

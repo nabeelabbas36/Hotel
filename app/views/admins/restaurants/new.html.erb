@@ -64,9 +64,7 @@
   <h3>Location</h3>
   <%= f.fields_for :locations do |builder| %>
     <%= render 'location_fields',:f=>builder %>
-  <%= f.fields_for :cities do |builder| %>
-    <%= render 'city_fields',:f=>builder %>
-  <% end %>
+  
   <% end %>
   <br />
   <%= f.submit %>

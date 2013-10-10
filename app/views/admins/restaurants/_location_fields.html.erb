@@ -15,6 +15,14 @@
   <div class="field">
     <%= f.label :close_time %>
     <%= f.time_select :close_time %>
-  </div> 
-    
+  </div>
+  <div>
+    <%= f.collection_select :city_id, [], :id, :name, {:default => 'Select City'}%>
+  </div>
+  <div>
+    <%= select_tag :country_id, options_from_collection_for_select(Country.all, 'id', 'name'), {:default => 'Select Country', :onchange => "get_regions()"}%>
+  </div>
+<%#*<div>%>
+<%#=  select_tag 'country', options_from_collection_for_select(@country, 'id', 'name') %>
+<%#= f.collection_select :country_id, options_from_collection_for_select(Country.all, 'id', 'name'), {:default => 'Select Country', :onchange => "get_regions()"}%>
 </div>

@@ -16,24 +16,30 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
-//function for removing dynamic fields
-function remove_fields(link) {
-    $(link).previous("input[type=hidden]").value = "1";
-    $(link).up(".fields").hide();
-}
+////function for removing dynamic fields
+//function remove_fields(link) {
+//    $(link).previous("input[type=hidden]").value = "1";
+//    $(link).up(".fields").hide();
+//}
 //function for adding dynamic fields
-function add_fields(menus, association, content) {
-    var new_id = new Date().getTime();
-    var regexp = new RegExp("new_" + association, "g");
-    $(menus).up().insert({
-        before: content.replace(regexp, new_id)
-    });
-}
+
+//  function remove_fields(link) {
+//  $(link).previous("input[type=hidden]").value = "1";
+//  $(link).up(".fields").hide();
+//}
+//
+//function add_fields(link, association, content) {
+//  var new_id = new Date().getTime();
+//  var regexp = new RegExp("new_" + association, "g");
+//  $(link).up().insert({
+//    before: content.replace(regexp, new_id)
+//  });
+//}
 function get_regions()
 {
     var id = $("#country_id").val();
     $.get("/admins/getlocations/" + id + "/get_regions", function(data) {
-        $("#region_id").remove();
+       $("#region_id").remove();
         $('.region').remove();
         $("#country_id").after(data);
     });
@@ -47,4 +53,26 @@ function get_cities()
         $("#region_id").after(data);
     });
 }
+function remove_fields(link) {
+  $(link).prev("input[type=hidden]").val("1");
+  $(link).closest(".fields").hide();
+}
 
+function add_fields(link, association, content) {
+  var new_id = new Date().getTime();
+  var regexp = new RegExp("new_" + association, "g");
+  $(link).parent().before(content.replace(regexp, new_id));
+}
+
+//function add_fields(locations, association, content) {
+//    var new_id = new Date().getTime();
+//    var regexp = new RegExp("new_" + association, "g");
+//    $(locations).up().insert({
+//        before: content.replace(regexp, new_id)
+//    });
+//}
+// function add_fields(locations, association, content) {
+//    var new_id = new Date().getTime();
+//    var regexp = new RegExp("new_" + association, "g");
+//    $(locations).parent().before(content.replace(regexp, new_id));
+//  }

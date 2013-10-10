@@ -17,7 +17,6 @@ class Admins::LocationsController < ApplicationController
   # GET /locations/new
   def new
     @location = Location.new
- 
   end
 
   # GET /locations/1/edit
@@ -73,7 +72,7 @@ class Admins::LocationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     private
   def secure_params
-    params.require(:location).permit(:name, :address, :start_time,:close_time, :city_id)
+    params.require(:location).permit(:id, :name, :address, :start_time,:close_time, :city_id)
   end
   end
 

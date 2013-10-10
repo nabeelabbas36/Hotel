@@ -19,7 +19,8 @@ class Admins::RestaurantsController < ApplicationController
   end
    
   def create
-    
+#    puts "sssssssssssssss", params.inspect
+#    put
     @restaurant = Restaurant.new(secure_params)
     if @restaurant.save
       flash[:notice] = "Message sent from #{@restaurant.name}."

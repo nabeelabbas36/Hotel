@@ -62,25 +62,20 @@
 
   <p>___________________________________________________________________</p>
   <h3>Location</h3>
+  <%#= f.fields_for :locations do |builder| %>
+  <%#= render :partial => "/admins/locations/form", :locals => { :f => builder} %>
+  <%#= render (association.to_s.singularize + "/admins/locations/form", f: builder, country_id: country_id) %>
+  <%#= render 'location_fields',:f=>builder %>
+  <%# end %>
+
   <%= f.fields_for :locations do |builder| %>
     <%= render 'location_fields',:f=>builder %>
-    <div>
-      <%= select_tag :country_id, options_from_collection_for_select(Country.all, 'id', 'name'), {:default => 'Select Country', :onchange => "get_regions()"}%>
-    </div>
   <% end %>
-
+  <p><%= link_to_add_fields "Add Location", f , :locations %></p>
   <br />
   <%= f.submit %>
 <% end %>
-
-
-
 <script type="text/javascript">
-  function add_fields(menus, association, content) {
-    var new_id = new Date().getTime();
-    var regexp = new RegExp("new_" + association, "g");
-    $(menus).parent().before(content.replace(regexp, new_id));
-  }
   $('#new_restaurant').validate({});
 </script>
 

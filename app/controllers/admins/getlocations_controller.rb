@@ -6,7 +6,7 @@ class Admins::GetlocationsController < ApplicationController
   end
   def get_cities
     @cities = Region.find_by_id(params[:getlocation_id]).cities
-    render :partial => "/admins/getlocations/get_cities", :locals => { :cities => @cities}
+   render :partial => "/admins/getlocations/get_cities", :locals => { :cities => @cities}
   
   end
 end
